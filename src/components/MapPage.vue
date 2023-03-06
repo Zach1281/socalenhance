@@ -24,7 +24,7 @@
           <!--data links to csv/js data file, titleKey and idKey identify specific column of data
               value links to specific data value/metric in the data file, geojsonIdKey identifies geojson file
               for choropleth layer, geojson is file name itself-->
-          <l-choropleth-layer :data="weighted_mhi_data" titleKey="zcta" idKey="zcta" :value="ocValue" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale">
+          <l-choropleth-layer :data="weighted_mhi_data" titleKey="zcta" idKey="zcta" :value="ocValue" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="mhiColorScale">
             <template slot-scope="info">
                 <!--info control is the pop up box on the bottom left; item is the numerical data value of the
                     current area that is being hovered over, unit is the metric of the data value, for example
@@ -135,6 +135,7 @@
           weighted_sdoh_data_city,
           weighted_mhi_data,
           selectedMap: 'map1',
+          mhiColorScale: ['#e34a33', '#fdbb84','#fee8c8'],
           colorScale: ['#fee8c8','#fdbb84','#e34a33'],
           /* each map has its own value that they represent, if making a new map, create a new
              variable as shown here and assign it a key (the data you want to display from the data file),
