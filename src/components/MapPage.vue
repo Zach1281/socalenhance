@@ -38,7 +38,7 @@
                     min and max can be copied as they are shown to have the program set
                     default values for the min and max, which will be the min and max found in the
                     data respectively-->
-              <l-reference-chart title="Mental Health Index Averages by Zip Code" :colorScale="colorScale" :min="info.min" :max="info.max" position="topright"/>
+              <l-reference-chart title="Mental Health Index Averages by Zip Code" :colorScale="colorScale" :min="info.max" :max="info.min" position="topright"/>
             </template>
           </l-choropleth-layer>
         </l-map>
