@@ -211,7 +211,7 @@
           weightedOCData,
           ocGeojson,  
           selectedMap: 'map1',
-          mhiColorScale: ['#fdbb84','#fee8c8', '#e34a33'],
+          mhiColorScale: ['#e34a33', '#fdbb84','#fee8c8'],
           colorScale: ['#fee8c8','#fdbb84','#e34a33'],
           /* each map has its own value that they represent, if making a new map, create a new
              variable as shown here and assign it a key (the data you want to display from the data file),
