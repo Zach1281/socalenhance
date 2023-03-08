@@ -180,6 +180,7 @@
     <p><i>* Data is weighted according to the population of each Zip Code Tabulation Area (ZCTA)</i></p>
     <h1>About the Map</h1>
     <p style="text-align: left; padding-left: 10px;">Our map visually portrays the Mental Health Index which takes into account: </p>
+    <p style="text-align: left; padding-left: 20px;"><b>Mental Health Index: </b>A measure of socioeconomic and health factors correlated with self-reported poor mental health.</p>
     <p style="text-align: left; padding-left: 20px;"><b>Economic Stability: </b>In the United States, 1 in 10 people live in poverty, and many people can't afford things like healthy foods, health care, and housing.</p>
     <p style="text-align: left; padding-left: 20px;"><b>Health Care and Quality: </b>Many people in the United States don't get the health care services they need.</p>
     <p style="text-align: left; padding-left: 20px;"><b>Social and Community Context: </b>People's relationships and interactions with family, friends, co-workers, and community members can have a major impact on their health and well-being.</p>
