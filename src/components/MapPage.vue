@@ -254,6 +254,10 @@
           {
             key: "w_no_school_job",
             metric: "% of people ages 16-19 unemployed and not in school - <b>Education</b>"
+          },
+          {
+            key: "w_mhi_avg",
+            metric: "<b>Weighted Mental Health Index Average</b>"
           }
         ],
         weconValue: {
@@ -272,6 +276,10 @@
           {
             key: "w_no_school_job",
             metric: "% of people ages 16-19 unemployed and not in school - <b>Education</b>"
+          },
+          {
+            key: "w_mhi_avg",
+            metric: "<b>Weighted Mental Health Index Average</b>"
           }
         ],
         wcomValue: {
@@ -290,6 +298,10 @@
           {
             key: "w_no_school_job",
             metric: "% of people ages 16-19 unemployed and not in school - <b>Education</b>"
+          },
+          {
+            key: "w_mhi_avg",
+            metric: "<b>Weighted Mental Health Index Average</b>"
           }
         ],
         weduValue: {
@@ -308,6 +320,10 @@
           {
             key: "distance_clinic",
               metric: "miles to nearest health clinic - <b>Community</b>"
+          },
+          {
+            key: "w_mhi_avg",
+            metric: "<b>Weighted Mental Health Index Average</b>"
           }
         ],
           /* if using OpenStreetMap, leave as true to give credit */
