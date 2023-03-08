@@ -24,14 +24,14 @@
           <!--data links to csv/js data file, titleKey and idKey identify specific column of data
               value links to specific data value/metric in the data file, geojsonIdKey identifies geojson file
               for choropleth layer, geojson is file name itself-->
-          <l-choropleth-layer :data="weighted_mhi_data" titleKey="zcta" idKey="zcta" :value="ocValue" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="mhiColorScale">
+          <l-choropleth-layer :data="weightedOCData" titleKey="City" idKey="zcta" :value="ocValue" :extraValues="ocExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="mhiColorScale">
             <template slot-scope="info">
                 <!--info control is the pop up box on the bottom left; item is the numerical data value of the
                     current area that is being hovered over, unit is the metric of the data value, for example
                     MHI map displays Mental Health Index, Economic Map is in percentages, etc.
                     title is the light grey text that appears at the top indicating the title,
                     placeholder is placeholder text that appears when not hovering over an area-->
-                <l-info-control :item="info.currentItem" :unit="info.unit" title="Zip Code" placeholder="Hover over a zip code"/>
+                <l-info-control :item="info.currentItem" :unit="info.unit" title="City" placeholder="Hover over a city"/>
                 <!--reference chart is the box at the top right of the page, showing the map's explanation and scale
                     title is the description/title of the current map
                     colorscale is the scale of colors, by default a green-yellow-red scale
@@ -47,7 +47,7 @@
       <div v-if="selectedMap === 'map2'" style="text-align: left;">
         <l-map :center="[33.7175, -117.8311]" :zoom="10" style="height: 700px;" :options="mapOptions">
           <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-              <l-choropleth-layer :data="weighted_sdoh_data_city" titleKey="City" idKey="zcta" :value="wfoodValue" :extraValues="wfoodExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale" @mouseover="onHover">
+              <l-choropleth-layer :data="weightedOCData" titleKey="City" idKey="zcta" :value="wfoodValue" :extraValues="wfoodExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale" @mouseover="onHover">
                 <template slot-scope="info">
                   <l-info-control :item="info.currentItem" :unit="info.unit" title="City" placeholder="Hover over a zip code" @mouseover="onHover"/>
                   <l-reference-chart title="Average Percentage of Households not receiving Food Stamps by Zip Code" :colorScale="colorScale" :min="info.min" :max="info.max" position="topright"/>
@@ -60,7 +60,7 @@
       <div v-if="selectedMap === 'map3'" style="text-align: left;">
         <l-map :center="[33.7175, -117.8311]" :zoom="10" style="height: 700px;" :options="mapOptions">
           <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-          <l-choropleth-layer :data="weighted_sdoh_data_city" titleKey="City" idKey="zcta" :value="weconValue" :extraValues="weconExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale">
+          <l-choropleth-layer :data="weightedOCData" titleKey="City" idKey="zcta" :value="weconValue" :extraValues="weconExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale">
             <template slot-scope="info">
               <l-info-control :item="info.currentItem" :unit="info.unit" title="City" placeholder="Hover over a zip code"/>
               <l-reference-chart title="Average Percentage of Unemployment (Ages 16+) by Zip Code" :colorScale="colorScale" :min="info.min" :max="info.max" position="topright"/>
@@ -73,7 +73,7 @@
       <div v-if="selectedMap === 'map4'" style="text-align: left;">
         <l-map :center="[33.7175, -117.8311]" :zoom="10" style="height: 700px;" :options="mapOptions">
           <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-          <l-choropleth-layer :data="weighted_sdoh_data_city" titleKey="City" idKey="zcta" :value="wcomValue" :extraValues="wcomExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale">
+          <l-choropleth-layer :data="weightedOCData" titleKey="City" idKey="zcta" :value="wcomValue" :extraValues="wcomExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale">
             <template slot-scope="info">
               <l-info-control :item="info.currentItem" :unit="info.unit" title="City" placeholder="Hover over a zip code"/>
               <l-reference-chart title="Average Distance to the nearest Health Clinic by Zip Code" :colorScale="colorScale" :min="info.min" :max="info.max" position="topright"/>
@@ -86,7 +86,7 @@
       <div v-if="selectedMap === 'map5'" style="text-align: left;">
         <l-map :center="[33.7175, -117.8311]" :zoom="10" style="height: 700px;" :options="mapOptions">
           <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-          <l-choropleth-layer :data="weighted_sdoh_data_city" titleKey="City" idKey="zcta" :value="weduValue" :extraValues="weduExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale">
+          <l-choropleth-layer :data="weightedOCData" titleKey="City" idKey="zcta" :value="weduValue" :extraValues="weduExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale">
             <template slot-scope="info">
               <l-info-control :item="info.currentItem" :unit="info.unit" title="City" placeholder="Hover over a zip code"/>
               <l-reference-chart title="Average Percent of People (Ages 16-19) Unemployed and Not in School by Zip Code" :colorScale="colorScale" :min="info.min" :max="info.max" position="topright"/>
@@ -178,14 +178,6 @@
         </tbody>
       </table>
     <p><i>* Data is Weighted</i></p>
-    <h1>About the Map</h1>
-    <p style="text-align: left; padding-left: 10px;">Our map visually portrays the Mental Health Index which takes into account: </p>
-    <p style="text-align: left; padding-left: 20px;"><b>Economic Stability: </b>In the United States, 1 in 10 people live in poverty, and many people can't afford things like healthy foods, health care, and housing.</p>
-    <p style="text-align: left; padding-left: 20px;"><b>Health Care and Quality: </b>Many people in the United States don't get the health care services they need.</p>
-    <p style="text-align: left; padding-left: 20px;"><b>Social and Community Context: </b>People's relationships and interactions with family, friends, co-workers, and community members can have a major impact on their health and well-being.</p>
-    <p style="text-align: left; padding-left: 20px;"><b>Neighborhood and Environment: </b>The neighborhoods people live in have a major impact on their health and well-being.</p>
-    <p style="text-align: left; padding-left: 20px;"><b>Education and Access Quality: </b>People with higher levels of education are more likely to be healthier and live longer.</p>
-    <p style="text-align: left; padding-left: 10px;">The higher the Mental Index Score, the better.</p>
     </div>
   </div>
   </template>
@@ -195,12 +187,8 @@
 
   import { InfoControl, ReferenceChart, ChoroplethLayer } from 'vue-choropleth'
   //import { geojson } from './data/py-departments-geojson'
-  import { sdohData } from '../data/sdohData'
   import ocGeojson from '../data/ocGeoZipCode.json'
-  import { ocMHData } from '../data/avg_data_zipcode'
-  import { weighted_mhi_data } from '../data/weighted_mhi_data'
-  import { weighted_sdoh_data } from '../data/weighted_sdoh_data'
-  import { weighted_sdoh_data_city } from '../data/weighted_sdoh_data_city'
+  import { weightedOCData } from '../data/weighted_data_city'
   import { LMap, LTileLayer, LGeoJson } from 'vue2-leaflet'
  
   export default {
@@ -220,12 +208,8 @@
           url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
           position: 'topright',
           attribution: '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-          ocMHData,
+          weightedOCData,
           ocGeojson,  
-          sdohData,
-          weighted_sdoh_data,
-          weighted_sdoh_data_city,
-          weighted_mhi_data,
           selectedMap: 'map1',
           mhiColorScale: ['#e34a33', '#fdbb84','#fee8c8'],
           colorScale: ['#fee8c8','#fdbb84','#e34a33'],
@@ -234,78 +218,112 @@
              and a metric to represent the data in */
         ocValue: {
           key: "w_mhi_avg",
-          metric: "Weighted Mental Health Index Average"
+          metric: " - <FONT COLOR=#FE7F9C><b>Weighted Mental Health Index Average</FONT COLOR></b>"
         },
+        ocExtraValues: [
+          {
+            key: "w_umemployed",
+            metric: "% Unemployed - <b>Econ</b>"
+          },
+          {
+            key: "w_no_food_stamps",
+            metric: "% eligible families with no foodstamps - <b>Food</b>"
+          },
+          {
+            key: "distance_clinic",
+            metric: "miles to nearest health clinic - <b>Community</b>"
+          },
+          {
+            key: "w_no_school_job",
+            metric: "% of people ages 16-19 unemployed and not in school - <b>Education</b>"
+          }
+        ],
         wfoodValue: {
           key: "w_no_food_stamps",
-          metric: "% eligible families with no foodstamps"
+          metric: "% eligible families with no foodstamps - <FONT COLOR=#960018><b>Food</FONT COLOR></b>"
         },
         wfoodExtraValues: [
           {
             key: "w_umemployed",
-            metric: "% Unemployed"
+            metric: "% Unemployed - <b>Econ</b>"
           },
           {
             key: "distance_clinic",
-            metric: "miles to nearest health clinic"
+            metric: "miles to nearest health clinic - <b>Community</b>"
           },
           {
             key: "w_no_school_job",
-            metric: "% of people ages 16-19 unemployed and not in school"
+            metric: "% of people ages 16-19 unemployed and not in school - <b>Education</b>"
+          },
+          {
+            key: "w_mhi_avg",
+            metric: "<b>Weighted Mental Health Index Average</b>"
           }
         ],
         weconValue: {
           key: "w_umemployed",
-          metric: "% of people unemployed"
+          metric: "% of people unemployed - <FONT COLOR=#80800><b>Econ</b></FONT COLOR>"
         },
         weconExtraValues: [
           {
             key: "w_no_food_stamps",
-            metric: "% eligible families with no foodstamps"
+            metric: "% eligible families with no foodstamps - <b>Food</b>"
           },
           {
             key: "distance_clinic",
-            metric: "miles to nearest health clinic"
+            metric: "miles to nearest health clinic - <b>Community</b>"
           },
           {
             key: "w_no_school_job",
-            metric: "% of people ages 16-19 unemployed and not in school"
+            metric: "% of people ages 16-19 unemployed and not in school - <b>Education</b>"
+          },
+          {
+            key: "w_mhi_avg",
+            metric: "<b>Weighted Mental Health Index Average</b>"
           }
         ],
         wcomValue: {
           key: "distance_clinic",
-          metric: "miles to nearest health clinic"
+          metric: "miles to nearest health clinic - <FONT COLOR=#008080><b>Community</b></FONT COLOR>"
         },
         wcomExtraValues: [
           {
             key: "w_no_food_stamps",
-            metric: "% eligible families with no foodstamps"
+            metric: "% eligible families with no foodstamps <b>Food</b>"
           },
           {
             key: "w_umemployed",
-            metric: "% of people unemployed"
+            metric: "% of people unemployed - <b>Econ</b>"
           },
           {
             key: "w_no_school_job",
-            metric: "% of people ages 16-19 unemployed and not in school"
+            metric: "% of people ages 16-19 unemployed and not in school - <b>Education</b>"
+          },
+          {
+            key: "w_mhi_avg",
+            metric: "<b>Weighted Mental Health Index Average</b>"
           }
         ],
         weduValue: {
           key: "w_no_school_job",
-          metric: "% of people ages 16-19 unemployed and not in school"
+          metric: "% of people ages 16-19 unemployed and not in school - <FONT COLOR=purple><b>Education</b></FONT COLOR>"
         },
         weduExtraValues: [
           {
             key: "w_no_food_stamps",
-            metric: "% eligible families with no foodstamps"
+            metric: "% eligible families with no foodstamps - <b>Food</b>"
           },
           {
             key: "w_umemployed",
-            metric: "% of people unemployed"
+            metric: "% of people unemployed - <b>Econ</b>"
           },
           {
             key: "distance_clinic",
-            metric: "miles to nearest health clinic"
+              metric: "miles to nearest health clinic - <b>Community</b>"
+          },
+          {
+            key: "w_mhi_avg",
+            metric: "<b>Weighted Mental Health Index Average</b>"
           }
         ],
           /* if using OpenStreetMap, leave as true to give credit */
