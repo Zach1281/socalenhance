@@ -50,7 +50,7 @@
               <l-choropleth-layer :data="weightedOCData" titleKey="City" idKey="zcta" :value="wfoodValue" :extraValues="wfoodExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale" @mouseover="onHover">
                 <template slot-scope="info">
                   <l-info-control :item="info.currentItem" :unit="info.unit" title="City" placeholder="Hover over a zip code" @mouseover="onHover"/>
-                  <l-reference-chart title="Average Percentage of Households not receiving Food Stamps by Zip Code" :colorScale="colorScale" :min="info.min" :max="info.max" position="topright"/>
+                  <l-reference-chart title="Average Percentage of Households under the poverty line not receiving Food Stamps by Zip Code" :colorScale="colorScale" :min="info.min" :max="info.max" position="topright"/>
               </template>
               </l-choropleth-layer>
         </l-map>
@@ -178,14 +178,6 @@
         </tbody>
       </table>
     <p><i>* Data is weighted according to the population of each Zip Code Tabulation Area (ZCTA)</i></p>
-    <h1>About the Map</h1>
-    <p style="text-align: left; padding-left: 10px;">Our map visually portrays the Mental Health Index which takes into account: </p>
-    <p style="text-align: left; padding-left: 20px;"><b>Economic Stability: </b>In the United States, 1 in 10 people live in poverty, and many people can't afford things like healthy foods, healthy foods, health care, and housing.</p>
-    <p style="text-align: left; padding-left: 20px;"><b>Health Care and Quality: </b>Many people in the United States don't get the health care services they need.</p>
-    <p style="text-align: left; padding-left: 20px;"><b>Social and Community Context: </b>People's relationships and interactions with family, friends, co-workers, and community members can have a major impact on their health and well-being.</p>
-    <p style="text-align: left; padding-left: 20px;"><b>Neighborhood and Environment: </b>The neighborhoods people live in have a major impact on their health and well-being.</p>
-    <p style="text-align: left; padding-left: 20px;"><b>Education and Access Quality: </b>People with higher levels of education are more likely to be healthier and live longer.</p>
-    <p style="text-align: left; padding-left: 10px;">The higher the Mental Index Score, the better.</p>
   </div>
   </div>
   </template>
@@ -230,7 +222,7 @@
         },
         ocExtraValues: [
           {
-            key: "w_unemployed",
+            key: "w_umemployed",
             metric: "% Unemployed - <b>Econ</b>"
           },
           {
@@ -252,7 +244,7 @@
         },
         wfoodExtraValues: [
           {
-            key: "w_unemployed",
+            key: "w_umemployed",
             metric: "% Unemployed - <b>Econ</b>"
           },
           {
@@ -269,7 +261,7 @@
           }
         ],
         weconValue: {
-          key: "w_unemployed",
+          key: "w_umemployed",
           metric: "% of people unemployed - <FONT COLOR=#80800><b>Econ</b></FONT COLOR>"
         },
         weconExtraValues: [
@@ -300,7 +292,7 @@
             metric: "% eligible families with no foodstamps <b>Food</b>"
           },
           {
-            key: "w_unemployed",
+            key: "w_umemployed",
             metric: "% of people unemployed - <b>Econ</b>"
           },
           {
@@ -322,7 +314,7 @@
             metric: "% eligible families with no foodstamps - <b>Food</b>"
           },
           {
-            key: "w_unemployed",
+            key: "w_umemployed",
             metric: "% of people unemployed - <b>Econ</b>"
           },
           {
