@@ -24,7 +24,7 @@
           <!--data links to csv/js data file, titleKey and idKey identify specific column of data
               value links to specific data value/metric in the data file, geojsonIdKey identifies geojson file
               for choropleth layer, geojson is file name itself-->
-          <l-choropleth-layer :data="weightedOCData" titleKey="City" idKey="zcta" :value="ocValue" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="mhiColorScale">
+          <l-choropleth-layer :data="weightedOCData" titleKey="City" idKey="zcta" :value="ocValue" :extraValues="ocExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="mhiColorScale">
             <template slot-scope="info">
                 <!--info control is the pop up box on the bottom left; item is the numerical data value of the
                     current area that is being hovered over, unit is the metric of the data value, for example
@@ -216,10 +216,28 @@
           /* each map has its own value that they represent, if making a new map, create a new
              variable as shown here and assign it a key (the data you want to display from the data file),
              and a metric to represent the data in */
-             ocValue: {
+        ocValue: {
           key: "w_mhi_avg",
-          metric: "<b>Weighted Mental Health Index Average</b>"
+          metric: " - <FONT COLOR=#960018><b>Weighted Mental Health Index Average</FONT COLOR></b>"
         },
+        ocExtraValues: [
+          {
+            key: "w_umemployed",
+            metric: "% Unemployed - <b>Econ</b>"
+          },
+          {
+            key: "w_no_food_stamps",
+            metric: "% eligible families with no foodstamps - <b>Food</b>"
+          },
+          {
+            key: "distance_clinic",
+            metric: "miles to nearest health clinic - <b>Community</b>"
+          },
+          {
+            key: "w_no_school_job",
+            metric: "% of people ages 16-19 unemployed and not in school - <b>Education</b>"
+          }
+        ],
         wfoodValue: {
           key: "w_no_food_stamps",
           metric: "% eligible families with no foodstamps - <FONT COLOR=#960018><b>Food</FONT COLOR></b>"
