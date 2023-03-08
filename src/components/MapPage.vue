@@ -177,8 +177,8 @@
           </tr>
         </tbody>
       </table>
-    <p><i>* Data is weighted according to the population of each Zip Code Tabulation Area (ZCTA)</i></p>
-    </div>
+    <p><i>* Data is Weighted</i></p>
+  </div>
   </div>
   </template>
   
