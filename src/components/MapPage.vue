@@ -187,12 +187,8 @@
 
   import { InfoControl, ReferenceChart, ChoroplethLayer } from 'vue-choropleth'
   //import { geojson } from './data/py-departments-geojson'
-  import { sdohData } from '../data/sdohData'
   import ocGeojson from '../data/ocGeoZipCode.json'
-  import { ocMHData } from '../data/avg_data_zipcode'
-  import { weighted_mhi_data } from '../data/weighted_mhi_data'
-  import { weighted_sdoh_data } from '../data/weighted_sdoh_data'
-  import { weighted_sdoh_data_city } from '../data/weighted_sdoh_data_city'
+  import { weightedOCData } from '../data/weighted_data_city'
   import { LMap, LTileLayer, LGeoJson } from 'vue2-leaflet'
  
   export default {
@@ -212,12 +208,8 @@
           url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
           position: 'topright',
           attribution: '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-          ocMHData,
+          weightedOCData,
           ocGeojson,  
-          sdohData,
-          weighted_sdoh_data,
-          weighted_sdoh_data_city,
-          weighted_mhi_data,
           selectedMap: 'map1',
           mhiColorScale: ['#e34a33', '#fdbb84','#fee8c8'],
           colorScale: ['#fee8c8','#fdbb84','#e34a33'],
