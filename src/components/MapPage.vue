@@ -186,7 +186,7 @@
     <p style="text-align: left; padding-left: 20px;"><b>Social and Community Context: </b>People's relationships and interactions with family, friends, co-workers, and community members can have a major impact on their health and well-being.</p>
     <p style="text-align: left; padding-left: 20px;"><b>Neighborhood and Environment: </b>The neighborhoods people live in have a major impact on their health and well-being.</p>
     <p style="text-align: left; padding-left: 20px;"><b>Education and Access Quality: </b>People with higher levels of education are more likely to be healthier and live longer.</p>
-    <p style="text-align: left; padding-left: 10px;">The higher the Mental Index Score, the better.</p>
+    <p style="text-align: left; padding-left: 10px;">The higher the Mental Index Score, the worse.</p>
 
   </div>
   </div>
