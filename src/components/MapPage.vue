@@ -18,7 +18,7 @@
       <i class="fa fa-pencil"></i>
       <label for="map5">  Education</label>
       <!--If new map is made, copy l-map and l-tile-layers, but other layers will be different depending on data file used-->
-      <div v-if="selectedMap === 'map1'" id="app">
+      <div v-if="selectedMap === 'map1'" id="app" style="text-align: left;">
         <l-map :center="[33.7175, -117.8311]" :zoom="10" style="height: 700px;" :options="mapOptions">
           <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
           <!--data links to csv/js data file, titleKey and idKey identify specific column of data
@@ -44,7 +44,7 @@
         </l-map>
       </div>
     <div>
-      <div v-if="selectedMap === 'map2'">
+      <div v-if="selectedMap === 'map2'" style="text-align: left;">
         <l-map :center="[33.7175, -117.8311]" :zoom="10" style="height: 700px;" :options="mapOptions">
           <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
               <l-choropleth-layer :data="weighted_sdoh_data_city" titleKey="City" idKey="zcta" :value="wfoodValue" :extraValues="wfoodExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale" @mouseover="onHover">
@@ -57,7 +57,7 @@
       </div>
     </div>
     <div>
-      <div v-if="selectedMap === 'map3'">
+      <div v-if="selectedMap === 'map3'" style="text-align: left;">
         <l-map :center="[33.7175, -117.8311]" :zoom="10" style="height: 700px;" :options="mapOptions">
           <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
           <l-choropleth-layer :data="weighted_sdoh_data_city" titleKey="City" idKey="zcta" :value="weconValue" :extraValues="weconExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale">
@@ -70,7 +70,7 @@
       </div>
     </div>
     <div>
-      <div v-if="selectedMap === 'map4'">
+      <div v-if="selectedMap === 'map4'" style="text-align: left;">
         <l-map :center="[33.7175, -117.8311]" :zoom="10" style="height: 700px;" :options="mapOptions">
           <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
           <l-choropleth-layer :data="weighted_sdoh_data_city" titleKey="City" idKey="zcta" :value="wcomValue" :extraValues="wcomExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale">
@@ -83,7 +83,7 @@
       </div>
     </div>
     <div>
-      <div v-if="selectedMap === 'map5'">
+      <div v-if="selectedMap === 'map5'" style="text-align: left;">
         <l-map :center="[33.7175, -117.8311]" :zoom="10" style="height: 700px;" :options="mapOptions">
           <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
           <l-choropleth-layer :data="weighted_sdoh_data_city" titleKey="City" idKey="zcta" :value="weduValue" :extraValues="weduExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale">
@@ -94,6 +94,90 @@
           </l-choropleth-layer>
         </l-map>
       </div>
+    </div>
+  <div>
+    <h1>The Social Determinants of Health</h1>
+      <p>Social Determinants of Health are conditions in people's everyday environment which includes non-medical factors such as socioeconomic status, neighborhood environment, etc. </p>
+      <table class="info-container">
+        <tbody class="info-body">
+          <tr class="info-row">
+            <td><h3>Economic Stability</h3></td>
+            <td><h3>Neighborhood and Physical Environment</h3></td>
+            <td><h3>Education</h3></td>
+            <td><h3>Food</h3></td>
+            <td><h3>Community and Social Context</h3></td>
+            <td><h3>Health Care System</h3></td>
+          </tr>
+          <tr class="info-row">
+            <td>
+              <div class="economic-info">
+                <ul>
+                  <li>Employment</li>
+                  <li>Income</li>
+                  <li>Expenses</li>
+                  <li>Debt</li>
+                  <li>Medical Bills</li>
+                  <li>Support</li>
+                </ul>
+              </div>
+            </td>
+            <td class="economic-container">
+              <div class="economic-info">
+                <ul>
+                   <li>Housing</li>
+                   <li>Transportation</li>
+                   <li>Safety</li>
+                   <li>Parks</li>
+                   <li>Playgrounds</li>
+                   <li>Walkability</li>
+                   <li>Zip Code / Geography</li>
+                </ul>
+              </div>
+            </td>
+            <td class="economic-container">
+              <div class="economic-info">
+                <ul>
+                  <li>Literacy</li>
+                  <li>Language</li>
+                  <li>Early Childhood Education</li>
+                  <li>Vocational Training</li>
+                  <li>Higher Education</li>
+                </ul>
+              </div>
+            </td>
+            <td class="economic-container">
+              <div class="economic-info">
+                <ul>
+                  <li>Hunger</li>
+                  <li>Access to Healthy Options</li>
+                </ul>
+              </div>
+            </td>
+            <td class="economic-container">
+              <div class="economic-info">
+                <ul>
+                  <li>Social Integration</li>
+                  <li>Support Systems</li>
+                  <li>Community Engagement</li>
+                  <li>Discrimination</li>
+                  <li>Stress</li>
+                </ul>
+              </div>
+            </td>
+            <td class="economic-container">
+              <div class="economic-info">
+                <ul>
+                  <li>Health Coverage</li>
+                  <li>Provider Availability</li>
+                  <li>Provider Linguistic and Cultural Competency</li>
+                  <li>Quality of Care</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    <p><i>* Data is Weighted</i></p>
     </div>
   </div>
   </template>
@@ -249,6 +333,20 @@
   }
   .info-control-wrapper {
     background-color: blueviolet;
+  }
+  template {
+    text-align: left;
+  }
+  ul {
+    list-style-type: none;
+    padding-left:0;
+  }
+  table {
+   width: 100%;
+  }
+  tr,td {
+    text-align: center;
+    vertical-align:top;
   }
   </style>
   
