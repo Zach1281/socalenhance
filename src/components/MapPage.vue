@@ -31,7 +31,7 @@
                     MHI map displays Mental Health Index, Economic Map is in percentages, etc.
                     title is the light grey text that appears at the top indicating the title,
                     placeholder is placeholder text that appears when not hovering over an area-->
-                <l-info-control :item="info.currentItem" :unit="info.unit" title="Zip Code" placeholder="Hover over a zip code"/>
+                <l-info-control :item="info.currentItem" :unit="info.unit" title="City" placeholder="Hover over a city"/>
                 <!--reference chart is the box at the top right of the page, showing the map's explanation and scale
                     title is the description/title of the current map
                     colorscale is the scale of colors, by default a green-yellow-red scale
