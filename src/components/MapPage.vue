@@ -218,7 +218,7 @@
              and a metric to represent the data in */
         ocValue: {
           key: "w_mhi_avg",
-          metric: " - <FONT COLOR=#960018><b>Weighted Mental Health Index Average</FONT COLOR></b>"
+          metric: " - <FONT COLOR=hotpink><b>Weighted Mental Health Index Average</FONT COLOR></b>"
         },
         ocExtraValues: [
           {
