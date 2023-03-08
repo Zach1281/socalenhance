@@ -218,7 +218,7 @@
              and a metric to represent the data in */
              ocValue: {
           key: "w_mhi_avg",
-          metric: "Weighted Mental Health Index Average"
+          metric: "<b>Weighted Mental Health Index Average</b>"
         },
         wfoodValue: {
           key: "w_no_food_stamps",
@@ -276,7 +276,7 @@
         ],
         weduValue: {
           key: "w_no_school_job",
-          metric: "% of people ages 16-19 unemployed and not in school - <b>Education</b>"
+          metric: "% of people ages 16-19 unemployed and not in school - <FONT COLOR=purple><b>Education</b></FONT COLOR>"
         },
         weduExtraValues: [
           {
