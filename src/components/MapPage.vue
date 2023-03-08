@@ -24,7 +24,7 @@
           <!--data links to csv/js data file, titleKey and idKey identify specific column of data
               value links to specific data value/metric in the data file, geojsonIdKey identifies geojson file
               for choropleth layer, geojson is file name itself-->
-          <l-choropleth-layer :data="weightedOCData" titleKey="City" idKey="zcta" :value="ocValue" :extraValues="ocExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="mhiColorScale">
+          <l-choropleth-layer :data="weightedOCData" titleKey="City" idKey="zcta" :value="ocValue" :extraValues="ocExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale">
             <template slot-scope="info">
                 <!--info control is the pop up box on the bottom left; item is the numerical data value of the
                     current area that is being hovered over, unit is the metric of the data value, for example
@@ -38,7 +38,7 @@
                     min and max can be copied as they are shown to have the program set
                     default values for the min and max, which will be the min and max found in the
                     data respectively-->
-              <l-reference-chart title="Mental Health Index Averages by Zip Code" :colorScale="colorScale" :min="info.max" :max="info.min" position="topright"/>
+              <l-reference-chart title="Mental Health Index Averages by Zip Code" :colorScale="colorScale" :min="info.min" :max="info.max" position="topright"/>
             </template>
           </l-choropleth-layer>
         </l-map>
@@ -245,6 +245,10 @@
           {
             key: "w_no_school_job",
             metric: "% of people ages 16-19 unemployed and not in school - <b>Education</b>"
+          },
+          {
+            key: "zcta_pop",
+            metric: "Population of Zip Code"
           }
         ],
         wfoodValue: {
@@ -267,6 +271,10 @@
           {
             key: "w_mhi_avg",
             metric: "<b>Weighted Mental Health Index Average</b>"
+          },
+          {
+            key: "zcta_pop",
+            metric: "Population of Zip Code"
           }
         ],
         weconValue: {
@@ -289,6 +297,10 @@
           {
             key: "w_mhi_avg",
             metric: "<b>Weighted Mental Health Index Average</b>"
+          },
+          {
+            key: "zcta_pop",
+            metric: "Population of Zip Code"
           }
         ],
         wcomValue: {
@@ -311,6 +323,10 @@
           {
             key: "w_mhi_avg",
             metric: "<b>Weighted Mental Health Index Average</b>"
+          },
+          {
+            key: "zcta_pop",
+            metric: "Population of Zip Code"
           }
         ],
         weduValue: {
@@ -333,6 +349,10 @@
           {
             key: "w_mhi_avg",
             metric: "<b>Weighted Mental Health Index Average</b>"
+          },
+          {
+            key: "zcta_pop",
+            metric: "Population of Zip Code"
           }
         ],
           /* if using OpenStreetMap, leave as true to give credit */
