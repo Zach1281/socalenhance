@@ -50,7 +50,7 @@
               <l-choropleth-layer :data="weighted_sdoh_data_city" titleKey="City" idKey="zcta" :value="wfoodValue" :extraValues="wfoodExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale" @mouseover="onHover">
                 <template slot-scope="info">
                   <l-info-control :item="info.currentItem" :unit="info.unit" title="City" placeholder="Hover over a zip code" @mouseover="onHover"/>
-                  <l-reference-chart title="Average Percentage of Households not recieving Food Stamps by Zip Code" :colorScale="colorScale" :min="info.min" :max="info.max" position="topright"/>
+                  <l-reference-chart title="Average Percentage of Households not receiving Food Stamps by Zip Code" :colorScale="colorScale" :min="info.min" :max="info.max" position="topright"/>
               </template>
               </l-choropleth-layer>
         </l-map>
@@ -95,7 +95,7 @@
         </l-map>
       </div>
     </div>
-  <div>
+  <div style="overflow-x:auto;">
     <h1>The Social Determinants of Health</h1>
       <p>Social Determinants of Health are conditions in people's everyday environment which includes non-medical factors such as socioeconomic status, neighborhood environment, etc. </p>
       <table class="info-container">
@@ -112,7 +112,7 @@
             <td>
               <div class="economic-info">
                 <ul>
-                  <li>Employment</li>
+                  <li><b>Employment</b></li>
                   <li>Income</li>
                   <li>Expenses</li>
                   <li>Debt</li>
@@ -125,7 +125,7 @@
               <div class="economic-info">
                 <ul>
                    <li>Housing</li>
-                   <li>Transportation</li>
+                   <li><b>Transportation</b></li>
                    <li>Safety</li>
                    <li>Parks</li>
                    <li>Playgrounds</li>
@@ -141,14 +141,14 @@
                   <li>Language</li>
                   <li>Early Childhood Education</li>
                   <li>Vocational Training</li>
-                  <li>Higher Education</li>
+                  <li><b>Higher Education</b></li>
                 </ul>
               </div>
             </td>
             <td class="economic-container">
               <div class="economic-info">
                 <ul>
-                  <li>Hunger</li>
+                  <li><b>Hunger</b></li>
                   <li>Access to Healthy Options</li>
                 </ul>
               </div>
@@ -157,7 +157,7 @@
               <div class="economic-info">
                 <ul>
                   <li>Social Integration</li>
-                  <li>Support Systems</li>
+                  <li><b>Support Systems</b></li>
                   <li>Community Engagement</li>
                   <li>Discrimination</li>
                   <li>Stress</li>
@@ -167,7 +167,7 @@
             <td class="economic-container">
               <div class="economic-info">
                 <ul>
-                  <li>Health Coverage</li>
+                  <li><b>Health Coverage</b></li>
                   <li>Provider Availability</li>
                   <li>Provider Linguistic and Cultural Competency</li>
                   <li>Quality of Care</li>
@@ -178,6 +178,14 @@
         </tbody>
       </table>
     <p><i>* Data is Weighted</i></p>
+    <h1>About the Map</h1>
+    <p style="text-align: left; padding-left: 10px;">Our map visually portrays the Mental Health Index which takes into account: </p>
+    <p style="text-align: left; padding-left: 20px;"><b>Economic Stability: </b>In the United States, 1 in 10 people live in poverty, and many people can't afford things like healthy foods, health care, and housing.</p>
+    <p style="text-align: left; padding-left: 20px;"><b>Health Care and Quality: </b>Many people in the United States don't get the health care services they need.</p>
+    <p style="text-align: left; padding-left: 20px;"><b>Social and Community Context: </b>People's relationships and interactions with family, friends, co-workers, and community members can have a major impact on their health and well-being.</p>
+    <p style="text-align: left; padding-left: 20px;"><b>Neighborhood and Environment: </b>The neighborhoods people live in have a major impact on their health and well-being.</p>
+    <p style="text-align: left; padding-left: 20px;"><b>Education and Access Quality: </b>People with higher levels of education are more likely to be healthier and live longer.</p>
+    <p style="text-align: left; padding-left: 10px;">The higher the Mental Index Score, the better.</p>
     </div>
   </div>
   </template>
@@ -342,10 +350,13 @@
     padding-left:0;
   }
   table {
-   width: 100%;
+    width: 100%;
+    border-collapse:collapse;
+    border: 1px solid white;
   }
   tr,td {
     text-align: center;
+    border: 1px solid white;
     vertical-align:top;
   }
   </style>
