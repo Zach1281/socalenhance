@@ -216,80 +216,80 @@
           /* each map has its own value that they represent, if making a new map, create a new
              variable as shown here and assign it a key (the data you want to display from the data file),
              and a metric to represent the data in */
-        ocValue: {
+             ocValue: {
           key: "w_mhi_avg",
           metric: "Weighted Mental Health Index Average"
         },
         wfoodValue: {
           key: "w_no_food_stamps",
-          metric: "% eligible families with no foodstamps"
+          metric: "% eligible families with no foodstamps - <FONT COLOR=#960018><b>Food</FONT COLOR></b>"
         },
         wfoodExtraValues: [
           {
             key: "w_umemployed",
-            metric: "% Unemployed"
+            metric: "% Unemployed - <b>Econ</b>"
           },
           {
             key: "distance_clinic",
-            metric: "miles to nearest health clinic"
+            metric: "miles to nearest health clinic - <b>Community</b>"
           },
           {
             key: "w_no_school_job",
-            metric: "% of people ages 16-19 unemployed and not in school"
+            metric: "% of people ages 16-19 unemployed and not in school - <b>Education</b>"
           }
         ],
         weconValue: {
           key: "w_umemployed",
-          metric: "% of people unemployed"
+          metric: "% of people unemployed - <FONT COLOR=#80800><b>Econ</b></FONT COLOR>"
         },
         weconExtraValues: [
           {
             key: "w_no_food_stamps",
-            metric: "% eligible families with no foodstamps"
+            metric: "% eligible families with no foodstamps - <b>Food</b>"
           },
           {
             key: "distance_clinic",
-            metric: "miles to nearest health clinic"
+            metric: "miles to nearest health clinic - <b>Community</b>"
           },
           {
             key: "w_no_school_job",
-            metric: "% of people ages 16-19 unemployed and not in school"
+            metric: "% of people ages 16-19 unemployed and not in school - <b>Education</b>"
           }
         ],
         wcomValue: {
           key: "distance_clinic",
-          metric: "miles to nearest health clinic"
+          metric: "miles to nearest health clinic - <FONT COLOR=#008080><b>Community</b></FONT COLOR>"
         },
         wcomExtraValues: [
           {
             key: "w_no_food_stamps",
-            metric: "% eligible families with no foodstamps"
+            metric: "% eligible families with no foodstamps <b>Food</b>"
           },
           {
             key: "w_umemployed",
-            metric: "% of people unemployed"
+            metric: "% of people unemployed - <b>Econ</b>"
           },
           {
             key: "w_no_school_job",
-            metric: "% of people ages 16-19 unemployed and not in school"
+            metric: "% of people ages 16-19 unemployed and not in school - <b>Education</b>"
           }
         ],
         weduValue: {
           key: "w_no_school_job",
-          metric: "% of people ages 16-19 unemployed and not in school"
+          metric: "% of people ages 16-19 unemployed and not in school - <b>Education</b>"
         },
         weduExtraValues: [
           {
             key: "w_no_food_stamps",
-            metric: "% eligible families with no foodstamps"
+            metric: "% eligible families with no foodstamps - <b>Food</b>"
           },
           {
             key: "w_umemployed",
-            metric: "% of people unemployed"
+            metric: "% of people unemployed - <b>Econ</b>"
           },
           {
             key: "distance_clinic",
-            metric: "miles to nearest health clinic"
+              metric: "miles to nearest health clinic - <b>Community</b>"
           }
         ],
           /* if using OpenStreetMap, leave as true to give credit */
