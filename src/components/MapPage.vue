@@ -24,7 +24,7 @@
           <!--data links to csv/js data file, titleKey and idKey identify specific column of data
               value links to specific data value/metric in the data file, geojsonIdKey identifies geojson file
               for choropleth layer, geojson is file name itself-->
-          <l-choropleth-layer :data="weighted_mhi_data" titleKey="zcta" idKey="zcta" :value="ocValue" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="mhiColorScale">
+          <l-choropleth-layer :data="weightedOCData" titleKey="City" idKey="zcta" :value="ocValue" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="mhiColorScale">
             <template slot-scope="info">
                 <!--info control is the pop up box on the bottom left; item is the numerical data value of the
                     current area that is being hovered over, unit is the metric of the data value, for example
@@ -47,7 +47,7 @@
       <div v-if="selectedMap === 'map2'" style="text-align: left;">
         <l-map :center="[33.7175, -117.8311]" :zoom="10" style="height: 700px;" :options="mapOptions">
           <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-              <l-choropleth-layer :data="weighted_sdoh_data_city" titleKey="City" idKey="zcta" :value="wfoodValue" :extraValues="wfoodExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale" @mouseover="onHover">
+              <l-choropleth-layer :data="weightedOCData" titleKey="City" idKey="zcta" :value="wfoodValue" :extraValues="wfoodExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale" @mouseover="onHover">
                 <template slot-scope="info">
                   <l-info-control :item="info.currentItem" :unit="info.unit" title="City" placeholder="Hover over a zip code" @mouseover="onHover"/>
                   <l-reference-chart title="Average Percentage of Households not recieving Food Stamps by Zip Code" :colorScale="colorScale" :min="info.min" :max="info.max" position="topright"/>
@@ -60,7 +60,7 @@
       <div v-if="selectedMap === 'map3'" style="text-align: left;">
         <l-map :center="[33.7175, -117.8311]" :zoom="10" style="height: 700px;" :options="mapOptions">
           <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-          <l-choropleth-layer :data="weighted_sdoh_data_city" titleKey="City" idKey="zcta" :value="weconValue" :extraValues="weconExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale">
+          <l-choropleth-layer :data="weightedOCData" titleKey="City" idKey="zcta" :value="weconValue" :extraValues="weconExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale">
             <template slot-scope="info">
               <l-info-control :item="info.currentItem" :unit="info.unit" title="City" placeholder="Hover over a zip code"/>
               <l-reference-chart title="Average Percentage of Unemployment (Ages 16+) by Zip Code" :colorScale="colorScale" :min="info.min" :max="info.max" position="topright"/>
@@ -73,7 +73,7 @@
       <div v-if="selectedMap === 'map4'" style="text-align: left;">
         <l-map :center="[33.7175, -117.8311]" :zoom="10" style="height: 700px;" :options="mapOptions">
           <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-          <l-choropleth-layer :data="weighted_sdoh_data_city" titleKey="City" idKey="zcta" :value="wcomValue" :extraValues="wcomExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale">
+          <l-choropleth-layer :data="weightedOCData" titleKey="City" idKey="zcta" :value="wcomValue" :extraValues="wcomExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale">
             <template slot-scope="info">
               <l-info-control :item="info.currentItem" :unit="info.unit" title="City" placeholder="Hover over a zip code"/>
               <l-reference-chart title="Average Distance to the nearest Health Clinic by Zip Code" :colorScale="colorScale" :min="info.min" :max="info.max" position="topright"/>
@@ -86,7 +86,7 @@
       <div v-if="selectedMap === 'map5'" style="text-align: left;">
         <l-map :center="[33.7175, -117.8311]" :zoom="10" style="height: 700px;" :options="mapOptions">
           <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-          <l-choropleth-layer :data="weighted_sdoh_data_city" titleKey="City" idKey="zcta" :value="weduValue" :extraValues="weduExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale">
+          <l-choropleth-layer :data="weightedOCData" titleKey="City" idKey="zcta" :value="weduValue" :extraValues="weduExtraValues" geojsonIdKey="dpto" :geojson="ocGeojson" :colorScale="colorScale">
             <template slot-scope="info">
               <l-info-control :item="info.currentItem" :unit="info.unit" title="City" placeholder="Hover over a zip code"/>
               <l-reference-chart title="Average Percent of People (Ages 16-19) Unemployed and Not in School by Zip Code" :colorScale="colorScale" :min="info.min" :max="info.max" position="topright"/>
