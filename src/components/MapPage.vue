@@ -228,24 +228,24 @@
              and a metric to represent the data in */
         ocValue: {
           key: "w_mhi_avg",
-          metric: " - <FONT COLOR=#FE7F9C><b>Weighted Mental Health Index Average</FONT COLOR></b>"
+          metric: " - <FONT COLOR=#FE7F9C><b>MHI</b></FONT COLOR> - Weighted Mental Health Index Average"
         },
         ocExtraValues: [
           {
             key: "w_unemployed",
-            metric: "% Unemployed - <b>Econ</b>"
+            metric: " - <b>Econ</b> - % Unemployed"
           },
           {
             key: "w_no_food_stamps",
-            metric: "% eligible families with no foodstamps - <b>Food</b>"
+            metric: " - <b>Food</b> - % eligible families with no foodstamps"
           },
           {
             key: "distance_clinic",
-            metric: "miles to nearest health clinic - <b>Community</b>"
+            metric: " - <b>Community</b> - miles to nearest health clinic"
           },
           {
             key: "w_no_school_job",
-            metric: "% of people ages 16-19 unemployed and not in school - <b>Education</b>"
+            metric: " - <b>Education</b> - % of people ages 16-19 unemployed and not in school"
           },
           {
             key: "zcta_pop",
@@ -254,24 +254,24 @@
         ],
         wfoodValue: {
           key: "w_no_food_stamps",
-          metric: "% eligible families with no foodstamps - <FONT COLOR=#960018><b>Food</FONT COLOR></b>"
+          metric: " - <FONT COLOR=#960018><b>Food</FONT COLOR></b> - % eligible families with no foodstamps"
         },
         wfoodExtraValues: [
           {
             key: "w_unemployed",
-            metric: "% Unemployed - <b>Econ</b>"
+            metric: " - <b>Econ</b> - % Unemployed"
           },
           {
             key: "distance_clinic",
-            metric: "miles to nearest health clinic - <b>Community</b>"
+            metric: " - <b>Community</b> - miles to nearest health clinic"
           },
           {
             key: "w_no_school_job",
-            metric: "% of people ages 16-19 unemployed and not in school - <b>Education</b>"
+            metric: " - <b>Education</b> - % of people ages 16-19 unemployed and not in school"
           },
           {
             key: "w_mhi_avg",
-            metric: "<b>Weighted Mental Health Index Average</b>"
+            metric: " - <b>MHI</b> - Weighted Mental Health Index Average"
           },
           {
             key: "zcta_pop",
@@ -280,24 +280,24 @@
         ],
         weconValue: {
           key: "w_unemployed",
-          metric: "% of people unemployed - <FONT COLOR=#80800><b>Econ</b></FONT COLOR>"
+          metric: " - <FONT COLOR=#80800><b>Econ</b></FONT COLOR> - % of people unemployed"
         },
         weconExtraValues: [
           {
             key: "w_no_food_stamps",
-            metric: "% eligible families with no foodstamps - <b>Food</b>"
+            metric: " - <b>Food</b> - % eligible families with no foodstamps"
           },
           {
             key: "distance_clinic",
-            metric: "miles to nearest health clinic - <b>Community</b>"
+            metric: " - <b>Community</b> - miles to nearest health clinic"
           },
           {
             key: "w_no_school_job",
-            metric: "% of people ages 16-19 unemployed and not in school - <b>Education</b>"
+            metric: " - <b>Education</b> - % of people ages 16-19 unemployed and not in school"
           },
           {
             key: "w_mhi_avg",
-            metric: "<b>Weighted Mental Health Index Average</b>"
+            metric: " - <b>MHI</b> - Weighted Mental Health Index Average"
           },
           {
             key: "zcta_pop",
@@ -306,24 +306,24 @@
         ],
         wcomValue: {
           key: "distance_clinic",
-          metric: "miles to nearest health clinic - <FONT COLOR=#008080><b>Community</b></FONT COLOR>"
+          metric: " - <FONT COLOR=#008080><b>Community</b></FONT COLOR> - miles to nearest health clinic"
         },
         wcomExtraValues: [
           {
             key: "w_no_food_stamps",
-            metric: "% eligible families with no foodstamps <b>Food</b>"
+            metric: " - <b>Food</b> - % eligible families with no foodstamps"
           },
           {
             key: "w_unemployed",
-            metric: "% of people unemployed - <b>Econ</b>"
+            metric: " - <b>Econ</b> - % of people unemployed"
           },
           {
             key: "w_no_school_job",
-            metric: "% of people ages 16-19 unemployed and not in school - <b>Education</b>"
+            metric: " - <b>Education</b> - % of people ages 16-19 unemployed and not in school"
           },
           {
             key: "w_mhi_avg",
-            metric: "<b>Weighted Mental Health Index Average</b>"
+            metric: " - <b>MHI</b> - Weighted Mental Health Index Average"
           },
           {
             key: "zcta_pop",
@@ -332,24 +332,24 @@
         ],
         weduValue: {
           key: "w_no_school_job",
-          metric: "% of people ages 16-19 unemployed and not in school - <FONT COLOR=purple><b>Education</b></FONT COLOR>"
+          metric: " - <FONT COLOR=purple><b>Education</b></FONT COLOR> - % of people ages 16-19 unemployed and not in school"
         },
         weduExtraValues: [
           {
             key: "w_no_food_stamps",
-            metric: "% eligible families with no foodstamps - <b>Food</b>"
+            metric: " - <b>Food</b> - % eligible families with no foodstamps"
           },
           {
             key: "w_unemployed",
-            metric: "% of people unemployed - <b>Econ</b>"
+            metric: " - <b>Econ</b> - % of people unemployed"
           },
           {
             key: "distance_clinic",
-              metric: "miles to nearest health clinic - <b>Community</b>"
+              metric: " - <b>Community</b> - miles to nearest health clinic"
           },
           {
             key: "w_mhi_avg",
-            metric: "<b>Weighted Mental Health Index Average</b>"
+            metric: " - <b>MHI</b> - Weighted Mental Health Index Average"
           },
           {
             key: "zcta_pop",
