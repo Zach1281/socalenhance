@@ -232,7 +232,7 @@
         },
         ocExtraValues: [
           {
-            key: "w_umemployed",
+            key: "w_unemployed",
             metric: "% Unemployed - <b>Econ</b>"
           },
           {
@@ -258,7 +258,7 @@
         },
         wfoodExtraValues: [
           {
-            key: "w_umemployed",
+            key: "w_unemployed",
             metric: "% Unemployed - <b>Econ</b>"
           },
           {
@@ -279,7 +279,7 @@
           }
         ],
         weconValue: {
-          key: "w_umemployed",
+          key: "w_unemployed",
           metric: "% of people unemployed - <FONT COLOR=#80800><b>Econ</b></FONT COLOR>"
         },
         weconExtraValues: [
@@ -314,7 +314,7 @@
             metric: "% eligible families with no foodstamps <b>Food</b>"
           },
           {
-            key: "w_umemployed",
+            key: "w_unemployed",
             metric: "% of people unemployed - <b>Econ</b>"
           },
           {
@@ -340,7 +340,7 @@
             metric: "% eligible families with no foodstamps - <b>Food</b>"
           },
           {
-            key: "w_umemployed",
+            key: "w_unemployed",
             metric: "% of people unemployed - <b>Econ</b>"
           },
           {
